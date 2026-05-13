@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f7f7f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% -8%, rgba(247, 220, 229, 0.75), transparent 28rem),
+    radial-gradient(circle at 90% 4%, rgba(47, 95, 143, 0.08), transparent 24rem),
+    #f7f7f8;
+  color: #1d1d1f;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.map-grid {
+  background-image:
+    linear-gradient(rgba(23, 23, 23, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 23, 23, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.ink-wash {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(255, 250, 247, 0.86)),
+    radial-gradient(circle at 15% 20%, rgba(247, 220, 229, 0.95), transparent 18rem),
+    radial-gradient(circle at 90% 90%, rgba(66, 107, 88, 0.12), transparent 20rem);
+}
+
+.image-soft {
+  filter: saturate(0.82) contrast(0.95);
+}
+
+.smooth-card {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+}
+
+.smooth-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+.soft-float {
+  animation: soft-float 7s ease-in-out infinite;
+}
+
+@keyframes soft-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.sudoku-cell:nth-child(3n) {
+  border-right-width: 2px;
+}
+
+.sudoku-row:nth-child(3n) .sudoku-cell {
+  border-bottom-width: 2px;
+}
+
+.fog-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 22% 22%, rgba(255, 255, 255, 0.88), transparent 34%),
+    radial-gradient(circle at 72% 36%, rgba(241, 245, 249, 0.82), transparent 38%),
+    radial-gradient(circle at 38% 78%, rgba(226, 232, 240, 0.74), transparent 40%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(148, 163, 184, 0.38));
+  backdrop-filter: blur(2.5px);
+}
+
+.fog-overlay::before,
+.fog-overlay::after {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  background:
+    radial-gradient(ellipse at 30% 45%, rgba(255, 255, 255, 0.7), transparent 32%),
+    radial-gradient(ellipse at 66% 52%, rgba(203, 213, 225, 0.42), transparent 36%);
+  opacity: 0.78;
+}
+
+.fog-overlay::after {
+  transform: rotate(24deg) scale(1.15);
+  opacity: 0.52;
+}
