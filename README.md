@@ -1,43 +1,39 @@
 # Mind Empires
 
-Mind Empires is a Sudoku game wrapped in a small strategy campaign. You solve Sudoku boards, unlock new regions, earn energy and coins, and move through different themed battles.
+Ссылка на игру: https://mind-empires.vercel.app/
 
-## What it does
+Я разработал судоку игру с мини сюжеткой. Игрок играет в разные моды судоку в разных регионах, например в регионе Сакура, некоторые клетки закрыты туманом, что придает сложность к геймплею. Таким образом, у игрока разный геймплей в каждом регионе, что делает игру интересной.
+Также был подключен STRIPE для покупки бустеров и энергии для продолжения игры. 
 
-- Play Sudoku battles on the world map.
-- Earn rewards when you finish a region.
-- Use boosters, notes, undo, and keyboard input.
-- Keep your progress in the browser.
+Все детали и также можно опционально запустить локально:
 
-## How to run it locally
+* Sudoku-битвы на карте мира.
+* Награды за прохождение регионов.
+* Бустеры, заметки, отмена хода и ввод с клавиатуры.
+* Сохранение прогресса в браузере.
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+## Как запустить локально
 
-2. Start the app:
-   ```bash
-   npm run dev
-   ```
+1. Установить зависимости:
 
-3. Open the app in your browser:
-   - http://localhost:3000
-   - If port 3000 is busy, Next.js may choose another port like 3001 or 3002.
+```bash
+npm install
+```
 
-## Build for production
+2. Запустить приложение:
+
+```bash
+npm run dev
+```
+
+3. Открыть приложение в браузере:
+
+* [http://localhost:3000](http://localhost:3000)
+* Если порт 3000 занят, Next.js может открыть другой порт, например 3001 или 3002.
+
+## Сборка для продакшена
 
 ```bash
 npm run build
 npm run start
 ```
-
-## Environment variables
-
-Copy `.env.example` to `.env.local` and fill in your own values.
-
-Do not commit `.env.local` or any secret keys to GitHub.
-
-## Main idea
-
-The idea is simple: make Sudoku feel like a calm campaign instead of a plain puzzle. Each region adds a new challenge, and the game gives you a sense of progress as you conquer the map.
